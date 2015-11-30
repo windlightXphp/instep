@@ -2,12 +2,14 @@
 
 namespace app\controllers;
 
+use app\models\Groups;
 use Yii;
 use app\models\Students;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * StudentsController implements the CRUD actions for Students model.
@@ -62,11 +64,15 @@ class StudentsController extends Controller
     {
         $model = new Students();
 
+        # get all group
+        $groups = Groups::find()->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'groups' => ArrayHelper::map($groups, 'id', 'name')
             ]);
         }
     }

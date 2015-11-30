@@ -19,7 +19,8 @@ $config = [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
             'rules' => [
-//                'admin/students/index' => 'students/index',
+                'admin/students/index' => 'students/index',
+                'admin/groups/index' => 'groups/index',
 //                'admin/groups/<action:\w+>' => 'groups/<action:\w+>'
 
 //
