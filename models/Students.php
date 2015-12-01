@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "students".
@@ -38,10 +39,20 @@ class Students extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
-            [['group_id', 'created_at', 'updated_at'], 'required'],
+            [['group_id'], 'required'],
             [['group_id', 'birth_at', 'count_like', 'count_coments', 'status', 'created_at', 'updated_at', 'deleted_at'], 'integer'],
             [['avg', 'count_balance'], 'number'],
             [['full_name', 'e_mail', 'avatar'], 'string', 'max' => 50],

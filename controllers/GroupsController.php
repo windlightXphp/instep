@@ -14,6 +14,8 @@ use yii\filters\VerbFilter;
  */
 class GroupsController extends Controller
 {
+    public $layout = "@app/views/layouts/main_admin";
+
     public function behaviors()
     {
         return [

@@ -16,6 +16,8 @@ use yii\helpers\ArrayHelper;
  */
 class StudentsController extends Controller
 {
+    public $layout = "@app/views/layouts/main_admin";
+
     public function behaviors()
     {
         return [

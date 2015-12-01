@@ -40,7 +40,7 @@ class AppAsset extends AssetBundle
         'assets/js/plugins/ui/moment/moment.min.js',
         'assets/js/plugins/pickers/daterangepicker.js',
         'assets/js/core/app.js',
-        'assets/js/pages/dashboard.js',
+        //'assets/js/pages/dashboard.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
