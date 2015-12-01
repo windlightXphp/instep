@@ -1,53 +1,66 @@
-<?php
 
-/* @var $this yii\web\View */
+<select>
+    <?php foreach ($groups as $key => $val) : ?>
+    <option value="<?= $key; ?>"> <?= $val; ?> </option>
+    <?php endforeach; ?>
+</select>
 
-$this->title = 'My Yii Application';
-?>
-<div class="site-index">
+<hr>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<?php for ($i = 0; $i < count($students); $i++) : ?>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <div class="col-lg-3">
+        <form action="#" class="form-horizontal">
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <span>Detail</span>
+                            <i class="caret"></i>
+                        </a>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="#"><i class="icon-user-plus"></i><?= $students[$i]->e_mail ?></a></li>
+                            <li><a href="#"><i class="icon-user-plus"></i><?= $students[$i]->phone ?></a></li>
+                            <li><a href="#"><i class="icon-user-plus"></i><?= date('Y-m-d', $students[$i]->birth_at) ?></a></li>
+                            <li><a href="#"><i class="icon-user-plus"></i><?= $students[$i]->avg ?></a></li>
+
+                        </ul>
+                    </li>
+
+                    <div class="heading-elements">
+                        <ul class="icons-list">
+                            <li><a data-action="collapse"></a></li>
+                            <li><a data-action="reload"></a></li>
+                            <li><a data-action="close"></a></li>
+                        </ul>
+                    </div>
+                    <a class="heading-elements-toggle">
+                        <i class="icon-menu"></i>
+                    </a>
+                </div>
+
+
+                <div class="panel-body">
+                    <div class="media-left">
+                        <a href="assets/images/placeholder.jpg" data-popup="lightbox">
+                            <img src="assets/images/placeholder.jpg" style="width: 70px; height: 70px;" class="img-circle" alt="">
+                        </a>
+                    </div>
+
+                    <?php
+                    echo '$full_name <span style="color:red">' . $students[$i]->full_name . '</span><br>';
+                    echo '$birth_at ' . date('Y-m-d', $students[$i]->birth_at) . '<br>';
+                    echo '$avatar ' . $students[$i]->avatar . '<br>';
+                    echo '$count_like ' . $students[$i]->count_like . '<br>';
+                    echo '$count_coments ' . $students[$i]->count_coments . '<br>';
+                    echo 'update_at ' . date('Y-m-d H:i:s', $students[$i]->updated_at) . '<br>';
+                    ?>
+
+                </div>
+
+            </div>
+        </form>
     </div>
+<?php endfor; ?>
 
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
-</div>

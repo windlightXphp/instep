@@ -12,10 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-<!--    --><?//= $form->field($model, 'group_id')->textInput() ?>
-
-    <?= $form->field($model, 'group_id')->dropDownList($groups);
-    ?>
+    <?= $form->field($model, 'group_id')->dropDownList($groups);?>
 
     <?= $form->field($model, 'full_name')->textInput(['maxlength' => true]) ?>
 
@@ -37,11 +34,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'deleted_at')->textInput() ?>
+<!--    --><?//= $form->field($model, 'created_at')->textInput() ?>
+<!---->
+<!--    --><?//= $form->field($model, 'updated_at')->textInput() ?>
+<!---->
+<!--    --><?//= $form->field($model, 'deleted_at')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
