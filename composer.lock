@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "1af0d6f2fb88384d1506a9ccb1f5fd96",
-    "content-hash": "2263da960831e20f1ff1ee9ec0f82ea6",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
